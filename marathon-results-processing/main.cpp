@@ -1,6 +1,11 @@
 #include <iostream>
 
-int main() {
-    std::cout << "Лабораторная работа №4. Обработка результатов марафона\n";
+using namespace std;
+
+int main()
+{
+    cout << "Laboratory work #4. GIT\n";
+    cout << "Variant #1. Marathon\n";
+    cout << "Author: Polyakov Nikita\n";
     return 0;
 }
