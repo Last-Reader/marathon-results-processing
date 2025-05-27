@@ -51,6 +51,5 @@ int main() {
     catch (const char* error) {
         cout << "Error: " << error << '\n';
     }
-
     return 0;
 }
