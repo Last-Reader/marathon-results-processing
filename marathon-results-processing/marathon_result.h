@@ -1,8 +1,10 @@
+// marathon_result.h
 #ifndef MARATHON_RESULT_H
 #define MARATHON_RESULT_H
 
 #include "constants.h"
 
+// Полное определение структуры time_mark
 struct time_mark {
     int hours;
     int minutes;
@@ -16,11 +18,11 @@ struct participant_name {
 };
 
 struct marathon_result {
-    int number;                 // Порядковый номер
-    participant_name runner;    // ФИО участника
-    time_mark start;            // Время старта
-    time_mark finish;           // Время финиша
-    char club;   // Название клуба (может содержать пробелы)
+    int number;
+    participant_name runner;
+    time_mark start;
+    time_mark finish;
+    char club[MAX_STRING_SIZE];
 };
 
 #endif
