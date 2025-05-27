@@ -1,4 +1,5 @@
 #include <iostream>
+#include <iomanip>
 #include "marathon_result.h"
 #include "file_reader.h"
 #include "constants.h"
@@ -8,44 +9,47 @@ using namespace std;
 int main() {
     setlocale(LC_ALL, "Russian");
     cout << "Laba №4. GIT\n";
-    cout << "Variant 11\n"; // Укажите номер вашего варианта
-    cout << "Author: Polyakov Nikita\n\n"; // Укажите ваше имя
+    cout << "Variant №11\n"; // Укажите номер варианта
+    cout << "Author: Nikita Polyakov\n\n";
 
     marathon_result* results[MAX_FILE_ROWS_COUNT];
     int size;
 
     try {
         read("data.txt", results, size);
+        cout << "***** Result *****\n\n";
 
-        // Вывод всех участников
         for (int i = 0; i < size; i++) {
-            cout << "Number: " << results[i]->number << endl;
-            cout << "FIO: "
+            /********** Участник **********/
+            cout << "Uchastnik №" << results[i]->number << ":\n";
+            cout << "FIO...........: "
                 << results[i]->runner.last_name << " "
                 << results[i]->runner.first_name << " "
-                << results[i]->runner.patronymic << endl;
+                << results[i]->runner.patronymic << '\n';
 
-            cout << "Start: "
-                << results[i]->start.hours << ":"
-                << results[i]->start.minutes << ":"
-                << results[i]->start.seconds << endl;
+            /********** Время старта **********/
+            cout << "Start.........: "
+                << setw(2) << setfill('0') << results[i]->start.hours << ":"
+                << setw(2) << setfill('0') << results[i]->start.minutes << ":"
+                << setw(2) << setfill('0') << results[i]->start.seconds << '\n';
 
-            cout << "Finish: "
-                << results[i]->finish.hours << ":"
-                << results[i]->finish.minutes << ":"
-                << results[i]->finish.seconds << endl;
+            /********** Время финиша **********/
+            cout << "Finish.........: "
+                << setw(2) << setfill('0') << results[i]->finish.hours << ":"
+                << setw(2) << setfill('0') << results[i]->finish.minutes << ":"
+                << setw(2) << setfill('0') << results[i]->finish.seconds << '\n';
 
-            cout << "Club: " << results[i]->club << endl;
-            cout << "----------------------------------\n";
+            /********** Клуб **********/
+            cout << "Club..........: " << results[i]->club << "\n\n";
         }
 
-        // Очистка памяти
+        // Освобождение памяти
         for (int i = 0; i < size; i++) {
             delete results[i];
         }
     }
     catch (const char* error) {
-        cout << "Error: " << error << endl;
+        cout << "Error: " << error << '\n';
     }
 
     return 0;
