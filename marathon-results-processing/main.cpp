@@ -1,8 +1,9 @@
 #include <iostream>
+#include <iomanip>
 
 using namespace std;
 
-int main(){
+int main() {
     cout << "Laboratory work #4. GIT\n";
     cout << "Variant #1\n";
     cout << "Author: Nikita Polyakov\n";
