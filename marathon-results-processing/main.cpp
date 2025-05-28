@@ -7,6 +7,7 @@
 using namespace std;
 
 int main() {
+    setlocale(LC_ALL, "Russian");
     cout << "Laboratory work #4. GIT\n";
     cout << "Variant #1\n";
     cout << "Author: Nikita Polyakov\n";
