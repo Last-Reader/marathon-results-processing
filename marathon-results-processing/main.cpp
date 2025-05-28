@@ -7,10 +7,10 @@
 using namespace std;
 
 int main() {
-    setlocale(LC_ALL, "Russian");
-    cout << "Laba ¹4. GIT\n";
-    cout << "Variant ¹11\n"; // Óêàæèòå íîìåð âàðèàíòà
-    cout << "Author: Nikita Polyakov\n\n";
+    cout << "Laboratory work #4. GIT\n";
+    cout << "Variant #1\n";
+    cout << "Author: Nikita Polyakov\n";
+    cout << "Group: 24PI\n";
 
     marathon_result* results[MAX_FILE_ROWS_COUNT];
     int size;
@@ -51,6 +51,5 @@ int main() {
     catch (const char* error) {
         cout << "Error: " << error << '\n';
     }
-
     return 0;
 }
